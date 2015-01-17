@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FSCamera.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    FSCamera *camera = [[FSCamera alloc] init];
+    camera.delegate = self;
+    [camera showImagePickerForCamera];
 }
 
 @end

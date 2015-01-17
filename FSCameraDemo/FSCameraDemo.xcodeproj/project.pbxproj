@@ -14,6 +14,8 @@
 		2BE918701A69FC1700344597 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE9186F1A69FC1700344597 /* Images.xcassets */; };
 		2BE918731A69FC1700344597 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE918711A69FC1700344597 /* LaunchScreen.xib */; };
 		2BE9187F1A69FC1700344597 /* FSCameraDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9187E1A69FC1700344597 /* FSCameraDemoTests.m */; };
+		2BE9188B1A6A339400344597 /* FSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9188A1A6A339400344597 /* FSCamera.m */; };
+		2BE918941A6AA07200344597 /* FSCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		2BE918781A69FC1700344597 /* FSCameraDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSCameraDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE9187D1A69FC1700344597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BE9187E1A69FC1700344597 /* FSCameraDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSCameraDemoTests.m; sourceTree = "<group>"; };
+		2BE918891A6A339400344597 /* FSCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCamera.h; sourceTree = "<group>"; };
+		2BE9188A1A6A339400344597 /* FSCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCamera.m; sourceTree = "<group>"; };
+		2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSCameraOverlayView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		2BE918611A69FC1700344597 /* FSCameraDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2BE918881A6A32E000344597 /* FSCamera */,
 				2BE918661A69FC1700344597 /* AppDelegate.h */,
 				2BE918671A69FC1700344597 /* AppDelegate.m */,
 				2BE918691A69FC1700344597 /* ViewController.h */,
@@ -117,6 +123,16 @@
 				2BE9187D1A69FC1700344597 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BE918881A6A32E000344597 /* FSCamera */ = {
+			isa = PBXGroup;
+			children = (
+				2BE918891A6A339400344597 /* FSCamera.h */,
+				2BE9188A1A6A339400344597 /* FSCamera.m */,
+				2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */,
+			);
+			path = FSCamera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +218,7 @@
 				2BE9186E1A69FC1700344597 /* Main.storyboard in Resources */,
 				2BE918731A69FC1700344597 /* LaunchScreen.xib in Resources */,
 				2BE918701A69FC1700344597 /* Images.xcassets in Resources */,
+				2BE918941A6AA07200344597 /* FSCameraOverlayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +239,7 @@
 				2BE9186B1A69FC1700344597 /* ViewController.m in Sources */,
 				2BE918681A69FC1700344597 /* AppDelegate.m in Sources */,
 				2BE918651A69FC1700344597 /* main.m in Sources */,
+				2BE9188B1A6A339400344597 /* FSCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +432,7 @@
 				2BE918841A69FC1700344597 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BE918851A69FC1700344597 /* Build configuration list for PBXNativeTarget "FSCameraDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +441,7 @@
 				2BE918871A69FC1700344597 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
