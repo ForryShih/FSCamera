@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) FSCamera *camera;
+
 @end
 
 @implementation ViewController
@@ -27,9 +29,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    FSCamera *camera = [[FSCamera alloc] init];
-    camera.delegate = self;
-    [camera showImagePickerForCamera];
+    _camera = [[FSCamera alloc] init];
+    _camera.delegate = self;
+    [_camera showImagePickerForCamera];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
 }
 
 @end

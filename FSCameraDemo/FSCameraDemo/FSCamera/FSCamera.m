@@ -73,4 +73,21 @@
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
+- (void)dealloc
+{
+    NSLog(@"&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+}
+
+#pragma mark - Action Methods
+
+- (IBAction)takePhoto:(UIButton *)sender
+{
+    [self.imagePickerController takePicture];
+}
+
+- (IBAction)cancelButtonClicked:(UIButton *)sender
+{
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
