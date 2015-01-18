@@ -15,7 +15,6 @@
 		2BE918731A69FC1700344597 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE918711A69FC1700344597 /* LaunchScreen.xib */; };
 		2BE9187F1A69FC1700344597 /* FSCameraDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9187E1A69FC1700344597 /* FSCameraDemoTests.m */; };
 		2BE9188B1A6A339400344597 /* FSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9188A1A6A339400344597 /* FSCamera.m */; };
-		2BE918941A6AA07200344597 /* FSCameraOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 		2BE9187E1A69FC1700344597 /* FSCameraDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSCameraDemoTests.m; sourceTree = "<group>"; };
 		2BE918891A6A339400344597 /* FSCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCamera.h; sourceTree = "<group>"; };
 		2BE9188A1A6A339400344597 /* FSCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCamera.m; sourceTree = "<group>"; };
-		2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSCameraOverlayView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,6 @@
 			children = (
 				2BE918891A6A339400344597 /* FSCamera.h */,
 				2BE9188A1A6A339400344597 /* FSCamera.m */,
-				2BE918931A6AA07200344597 /* FSCameraOverlayView.xib */,
 			);
 			path = FSCamera;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 				2BE9186E1A69FC1700344597 /* Main.storyboard in Resources */,
 				2BE918731A69FC1700344597 /* LaunchScreen.xib in Resources */,
 				2BE918701A69FC1700344597 /* Images.xcassets in Resources */,
-				2BE918941A6AA07200344597 /* FSCameraOverlayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FSCameraDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -374,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FSCameraDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

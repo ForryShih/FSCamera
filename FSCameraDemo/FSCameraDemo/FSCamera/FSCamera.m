@@ -53,9 +53,9 @@
 {
     
     self.imagePickerController = [[UIImagePickerController alloc] init];
+    self.imagePickerController.delegate = self.delegate;
     self.imagePickerController.sourceType = sourceType;
     self.imagePickerController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:sourceType];
-    self.imagePickerController.delegate = self.delegate;
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
