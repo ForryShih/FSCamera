@@ -27,11 +27,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.camera = [[FSCamera alloc] init];
+    self.camera.delegate = self;
+    [self.camera showImagePickerForCamera];
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    _camera = [[FSCamera alloc] init];
-    _camera.delegate = self;
-    [_camera showImagePickerForCamera];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

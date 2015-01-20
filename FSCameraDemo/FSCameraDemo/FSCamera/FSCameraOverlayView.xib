@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="cameraOverlayView" destination="iN0-l3-epB" id="t0E-GG-On9"/>
                 <outlet property="cancelButton" destination="sZL-th-MHz" id="TOX-DJ-byg"/>
+                <outlet property="switchCameraButton" destination="9gy-Om-gXz" id="nVT-ed-R4F"/>
+                <outlet property="switchFlashModeButton" destination="9qb-Ir-GBt" id="GOA-eC-Kf6"/>
                 <outlet property="takePhotoButton" destination="Psw-JS-61V" id="La3-nN-JC0"/>
             </connections>
         </placeholder>
@@ -19,16 +21,48 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-vQ-qsn" userLabel="topView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-Ir-GBt" userLabel="switchFlashModeButton">
+                            <rect key="frame" x="10" y="7" width="37" height="30"/>
+                            <state key="normal" title="Flash">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="switchFlashModeButtonClicked:" destination="-1" eventType="touchUpInside" id="fyW-V8-oUa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gy-Om-gXz" userLabel="switchCameraButton">
+                            <rect key="frame" x="543" y="7" width="47" height="30"/>
+                            <state key="normal" title="Switch">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="switchCameraButtonClicked:" destination="-1" eventType="touchUpInside" id="QKf-So-WHl"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="9qb-Ir-GBt" firstAttribute="leading" secondItem="HaF-vQ-qsn" secondAttribute="leading" constant="10" id="0If-0d-3uB"/>
+                        <constraint firstAttribute="trailing" secondItem="9gy-Om-gXz" secondAttribute="trailing" constant="10" id="ICF-v4-71N"/>
                         <constraint firstAttribute="height" constant="44" id="Ipw-G8-IqY"/>
+                        <constraint firstAttribute="centerY" secondItem="9gy-Om-gXz" secondAttribute="centerY" id="aYd-84-uGU"/>
+                        <constraint firstAttribute="centerY" secondItem="9qb-Ir-GBt" secondAttribute="centerY" id="mwh-u2-YMi"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ge-lf-c9S" userLabel="bottomView">
-                    <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                    <rect key="frame" x="0.0" y="480" width="600" height="120"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvm-xV-xhY" userLabel="indicatorView">
+                            <rect key="frame" x="295" y="10" width="10" height="10"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="Ggh-qh-UtA"/>
+                                <constraint firstAttribute="width" constant="10" id="Snj-3s-J37"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZL-th-MHz" userLabel="cancelButton">
-                            <rect key="frame" x="20" y="31" width="68" height="39"/>
+                            <rect key="frame" x="20" y="41" width="68" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Cancel">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +72,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-JS-61V" userLabel="takePhotoButton">
-                            <rect key="frame" x="275" y="31" width="51" height="39"/>
+                            <rect key="frame" x="275" y="41" width="51" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Snap">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,10 +85,12 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="Psw-JS-61V" secondAttribute="centerX" id="8Z1-Nk-o2H"/>
+                        <constraint firstItem="Mvm-xV-xhY" firstAttribute="top" secondItem="6ge-lf-c9S" secondAttribute="top" constant="10" id="BGU-yl-EO8"/>
                         <constraint firstItem="sZL-th-MHz" firstAttribute="leading" secondItem="6ge-lf-c9S" secondAttribute="leading" constant="20" id="YpA-UH-bmb"/>
                         <constraint firstAttribute="centerY" secondItem="sZL-th-MHz" secondAttribute="centerY" id="aJG-Wv-b0s"/>
-                        <constraint firstAttribute="height" constant="100" id="btf-3L-XhT"/>
+                        <constraint firstAttribute="height" constant="120" id="btf-3L-XhT"/>
                         <constraint firstAttribute="centerY" secondItem="Psw-JS-61V" secondAttribute="centerY" id="hTt-ZU-1U1"/>
+                        <constraint firstAttribute="centerX" secondItem="Mvm-xV-xhY" secondAttribute="centerX" id="yZO-ob-aHn"/>
                     </constraints>
                 </view>
             </subviews>

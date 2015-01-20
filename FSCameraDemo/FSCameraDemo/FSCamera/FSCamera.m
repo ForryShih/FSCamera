@@ -17,6 +17,8 @@
 @property (nonatomic, strong) IBOutlet UIView *cameraOverlayView;
 @property (nonatomic, weak) IBOutlet UIButton *takePhotoButton;
 @property (nonatomic, weak) IBOutlet UIButton *cancelButton;
+@property (nonatomic, weak) IBOutlet UIButton *switchCameraButton;
+@property (nonatomic, weak) IBOutlet UIButton *switchFlashModeButton;
 
 @end
 
@@ -39,14 +41,12 @@
 
 - (void)showImagePickerForCamera
 {
-    FSCamera *camera = [[FSCamera alloc] init];
-    [camera showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
 }
 
 - (void)showImagePickerForPhotoLibrary
 {
-    FSCamera *camera = [[FSCamera alloc] init];
-    [camera showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
 - (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
@@ -73,11 +73,6 @@
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
-- (void)dealloc
-{
-    NSLog(@"&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-}
-
 #pragma mark - Action Methods
 
 - (IBAction)takePhoto:(UIButton *)sender
@@ -89,5 +84,21 @@
 {
     [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)switchCameraButtonClicked:(UIButton *)sender
+{
+    self.imagePickerController.cameraDevice = (self.imagePickerController.cameraDevice + 1) % 2;
+}
+
+- (IBAction)switchFlashModeButtonClicked:(UIButton *)sender
+{
+    NSInteger cameraFlashMode = self.imagePickerController.cameraFlashMode + 1;
+    if (cameraFlashMode > 1)
+    {
+        cameraFlashMode = -1;
+    }
+    self.imagePickerController.cameraFlashMode = cameraFlashMode;
+}
+
 
 @end
