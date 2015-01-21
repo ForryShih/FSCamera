@@ -113,22 +113,26 @@
 {
     if (swipeGesture.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        if (self.imagePickerController.cameraFlashMode == UIImagePickerControllerCameraCaptureModePhoto)
+        if (self.imagePickerController.cameraCaptureMode == UIImagePickerControllerCameraCaptureModePhoto)
         {
             return;
         }
         else
         {
+            self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            [self adjustCaptureModeIndicatorView:UIImagePickerControllerCameraCaptureModePhoto];
         }
     }
     else if (swipeGesture.direction == UISwipeGestureRecognizerDirectionRight)
     {
-        if (self.imagePickerController.cameraFlashMode == UIImagePickerControllerCameraCaptureModeVideo)
+        if (self.imagePickerController.cameraCaptureMode == UIImagePickerControllerCameraCaptureModeVideo)
         {
             return;
         }
         else
         {
+            self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+            [self adjustCaptureModeIndicatorView:UIImagePickerControllerCameraCaptureModeVideo];
         }
     }
 }
@@ -139,9 +143,17 @@
 {
     if (captureMode == UIImagePickerControllerCameraCaptureModeVideo)
     {
-        CGRect captureModeIndicatorViewFrame = self.captureModeIndicatorView.frame;
         [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            CGFloat originX = self.captureModeIndicatorView.frame.origin.x + self.captureModeIndicatorView.frame.size.width * 0.5f;
+            self.captureModeIndicatorView.frame = CGRectMake(originX, self.captureModeIndicatorView.frame.origin.y, self.captureModeIndicatorView.frame.size.width, self.captureModeIndicatorView.frame.size.height);
             
+        } completion:nil];
+    }
+    else if (captureMode == UIImagePickerControllerCameraCaptureModePhoto)
+    {
+        [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            CGFloat originX = self.captureModeIndicatorView.frame.origin.x - self.captureModeIndicatorView.frame.size.width * 0.5f;
+            self.captureModeIndicatorView.frame = CGRectMake(originX, self.captureModeIndicatorView.frame.origin.y, self.captureModeIndicatorView.frame.size.width, self.captureModeIndicatorView.frame.size.height);
             
         } completion:nil];
     }
