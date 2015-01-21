@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="cameraOverlayView" destination="iN0-l3-epB" id="t0E-GG-On9"/>
                 <outlet property="cancelButton" destination="sZL-th-MHz" id="TOX-DJ-byg"/>
+                <outlet property="captureModeIndicatorView" destination="b6f-fa-vlk" id="7hV-9p-2Ya"/>
                 <outlet property="switchCameraButton" destination="9gy-Om-gXz" id="nVT-ed-R4F"/>
                 <outlet property="switchFlashModeButton" destination="9qb-Ir-GBt" id="GOA-eC-Kf6"/>
                 <outlet property="takePhotoButton" destination="Psw-JS-61V" id="La3-nN-JC0"/>
@@ -51,7 +52,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ge-lf-c9S" userLabel="bottomView">
-                    <rect key="frame" x="0.0" y="480" width="600" height="120"/>
+                    <rect key="frame" x="0.0" y="460" width="600" height="140"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvm-xV-xhY" userLabel="indicatorView">
                             <rect key="frame" x="295" y="10" width="10" height="10"/>
@@ -62,7 +63,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZL-th-MHz" userLabel="cancelButton">
-                            <rect key="frame" x="20" y="41" width="68" height="39"/>
+                            <rect key="frame" x="20" y="51" width="68" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Cancel">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,7 +73,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-JS-61V" userLabel="takePhotoButton">
-                            <rect key="frame" x="275" y="41" width="51" height="39"/>
+                            <rect key="frame" x="275" y="51" width="51" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Snap">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,6 +82,14 @@
                                 <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="5X3-0T-gJZ"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-fa-vlk" userLabel="captureModeIndicatorView">
+                            <rect key="frame" x="200" y="30" width="200" height="20"/>
+                            <color key="backgroundColor" red="0.65739425510000005" green="0.0" blue="0.072366348519999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="FUP-C2-gaI"/>
+                                <constraint firstAttribute="width" constant="200" id="N34-cR-9uw"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -88,8 +97,10 @@
                         <constraint firstItem="Mvm-xV-xhY" firstAttribute="top" secondItem="6ge-lf-c9S" secondAttribute="top" constant="10" id="BGU-yl-EO8"/>
                         <constraint firstItem="sZL-th-MHz" firstAttribute="leading" secondItem="6ge-lf-c9S" secondAttribute="leading" constant="20" id="YpA-UH-bmb"/>
                         <constraint firstAttribute="centerY" secondItem="sZL-th-MHz" secondAttribute="centerY" id="aJG-Wv-b0s"/>
-                        <constraint firstAttribute="height" constant="120" id="btf-3L-XhT"/>
+                        <constraint firstItem="b6f-fa-vlk" firstAttribute="top" secondItem="Mvm-xV-xhY" secondAttribute="bottom" constant="10" id="akD-LO-5iC"/>
+                        <constraint firstAttribute="height" constant="140" id="btf-3L-XhT"/>
                         <constraint firstAttribute="centerY" secondItem="Psw-JS-61V" secondAttribute="centerY" id="hTt-ZU-1U1"/>
+                        <constraint firstAttribute="centerX" secondItem="b6f-fa-vlk" secondAttribute="centerX" id="qfY-Fq-MqW"/>
                         <constraint firstAttribute="centerX" secondItem="Mvm-xV-xhY" secondAttribute="centerX" id="yZO-ob-aHn"/>
                     </constraints>
                 </view>

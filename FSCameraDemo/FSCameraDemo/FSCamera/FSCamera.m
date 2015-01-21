@@ -19,6 +19,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *cancelButton;
 @property (nonatomic, weak) IBOutlet UIButton *switchCameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *switchFlashModeButton;
+@property (nonatomic, weak) IBOutlet UIView *captureModeIndicatorView;
 
 @end
 
@@ -69,6 +70,14 @@
     
     CGFloat offsetY = self.imagePickerController.navigationBar.frame.size.height;
     self.imagePickerController.cameraViewTransform = CGAffineTransformMakeTranslation(0.0f,offsetY);
+    
+    UISwipeGestureRecognizer *swipeGestureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(switchCaptureMode:)];
+    swipeGestureLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.imagePickerController.cameraOverlayView addGestureRecognizer:swipeGestureLeft];
+    
+    UISwipeGestureRecognizer *swipeGestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(switchCaptureMode:)];
+    swipeGestureRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.imagePickerController.cameraOverlayView addGestureRecognizer:swipeGestureRight];
 
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.imagePickerController animated:YES completion:nil];
 }
@@ -98,6 +107,44 @@
         cameraFlashMode = -1;
     }
     self.imagePickerController.cameraFlashMode = cameraFlashMode;
+}
+
+- (void)switchCaptureMode:(UISwipeGestureRecognizer *)swipeGesture
+{
+    if (swipeGesture.direction == UISwipeGestureRecognizerDirectionLeft)
+    {
+        if (self.imagePickerController.cameraFlashMode == UIImagePickerControllerCameraCaptureModePhoto)
+        {
+            return;
+        }
+        else
+        {
+        }
+    }
+    else if (swipeGesture.direction == UISwipeGestureRecognizerDirectionRight)
+    {
+        if (self.imagePickerController.cameraFlashMode == UIImagePickerControllerCameraCaptureModeVideo)
+        {
+            return;
+        }
+        else
+        {
+        }
+    }
+}
+
+#pragma mark - Utility Methods
+
+- (void)adjustCaptureModeIndicatorView:(UIImagePickerControllerCameraCaptureMode)captureMode
+{
+    if (captureMode == UIImagePickerControllerCameraCaptureModeVideo)
+    {
+        CGRect captureModeIndicatorViewFrame = self.captureModeIndicatorView.frame;
+        [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            
+        } completion:nil];
+    }
 }
 
 
