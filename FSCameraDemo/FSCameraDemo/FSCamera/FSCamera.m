@@ -119,6 +119,7 @@
         }
         else
         {
+            self.takePhotoButton.tag = 0;
             self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
             [self adjustCaptureModeIndicatorView:UIImagePickerControllerCameraCaptureModePhoto];
         }
@@ -131,6 +132,7 @@
         }
         else
         {
+            self.takePhotoButton.tag = 1;
             self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
             [self adjustCaptureModeIndicatorView:UIImagePickerControllerCameraCaptureModeVideo];
         }
