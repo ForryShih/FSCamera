@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B01ADB41AF334D90046EE74 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B01ADB31AF334D90046EE74 /* MZTimerLabel.m */; };
 		2BE918651A69FC1700344597 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE918641A69FC1700344597 /* main.m */; };
 		2BE918681A69FC1700344597 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE918671A69FC1700344597 /* AppDelegate.m */; };
 		2BE9186B1A69FC1700344597 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9186A1A69FC1700344597 /* ViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B01ADB21AF334D90046EE74 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		2B01ADB31AF334D90046EE74 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		2BE9185F1A69FC1700344597 /* FSCameraDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSCameraDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE918631A69FC1700344597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BE918641A69FC1700344597 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B01ADB11AF334D90046EE74 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2B01ADB21AF334D90046EE74 /* MZTimerLabel.h */,
+				2B01ADB31AF334D90046EE74 /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
+			sourceTree = "<group>";
+		};
 		2BE918561A69FC1600344597 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +140,7 @@
 		2BE918881A6A32E000344597 /* FSCamera */ = {
 			isa = PBXGroup;
 			children = (
+				2B01ADB11AF334D90046EE74 /* MZTimerLabel */,
 				2BE918891A6A339400344597 /* FSCamera.h */,
 				2BE9188A1A6A339400344597 /* FSCamera.m */,
 				2BE918951A6BCE5D00344597 /* FSCameraOverlayView.xib */,
@@ -236,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B01ADB41AF334D90046EE74 /* MZTimerLabel.m in Sources */,
 				2BE9186B1A69FC1700344597 /* ViewController.m in Sources */,
 				2BE918681A69FC1700344597 /* AppDelegate.m in Sources */,
 				2BE918651A69FC1700344597 /* main.m in Sources */,

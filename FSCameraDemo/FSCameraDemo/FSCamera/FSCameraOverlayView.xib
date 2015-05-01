@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSCamera">
@@ -10,9 +10,13 @@
                 <outlet property="cameraOverlayView" destination="iN0-l3-epB" id="t0E-GG-On9"/>
                 <outlet property="cancelButton" destination="sZL-th-MHz" id="TOX-DJ-byg"/>
                 <outlet property="captureModeIndicatorView" destination="b6f-fa-vlk" id="7hV-9p-2Ya"/>
+                <outlet property="photoLabel" destination="GHP-cm-uIK" id="Jgs-sr-eq6"/>
                 <outlet property="switchCameraButton" destination="9gy-Om-gXz" id="nVT-ed-R4F"/>
                 <outlet property="switchFlashModeButton" destination="9qb-Ir-GBt" id="GOA-eC-Kf6"/>
                 <outlet property="takePhotoButton" destination="Psw-JS-61V" id="La3-nN-JC0"/>
+                <outlet property="takeVideoButton" destination="hDB-fg-iPv" id="pKA-bQ-9sf"/>
+                <outlet property="timerLabel" destination="sUK-L7-jgJ" id="nqc-rt-kfw"/>
+                <outlet property="videoLabel" destination="CoT-oc-bby" id="c22-8t-NkU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,99 +27,117 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-vQ-qsn" userLabel="topView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-Ir-GBt" userLabel="switchFlashModeButton">
-                            <rect key="frame" x="10" y="7" width="37" height="30"/>
-                            <state key="normal" title="Flash">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-Ir-GBt" userLabel="switchFlashModeButton">
+                            <rect key="frame" x="10" y="7" width="30" height="30"/>
+                            <state key="normal" image="camera_flash_auto_btn">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="switchFlashModeButtonClicked:" destination="-1" eventType="touchUpInside" id="fyW-V8-oUa"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gy-Om-gXz" userLabel="switchCameraButton">
-                            <rect key="frame" x="543" y="7" width="47" height="30"/>
-                            <state key="normal" title="Switch">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gy-Om-gXz" userLabel="switchCameraButton">
+                            <rect key="frame" x="560" y="7" width="30" height="30"/>
+                            <state key="normal" image="camera_switch_btn">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="switchCameraButtonClicked:" destination="-1" eventType="touchUpInside" id="QKf-So-WHl"/>
                             </connections>
                         </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUK-L7-jgJ" userLabel="TimerLabel" customClass="MZTimerLabel">
+                            <rect key="frame" x="300" y="22" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="9qb-Ir-GBt" firstAttribute="leading" secondItem="HaF-vQ-qsn" secondAttribute="leading" constant="10" id="0If-0d-3uB"/>
                         <constraint firstAttribute="trailing" secondItem="9gy-Om-gXz" secondAttribute="trailing" constant="10" id="ICF-v4-71N"/>
                         <constraint firstAttribute="height" constant="44" id="Ipw-G8-IqY"/>
+                        <constraint firstAttribute="centerX" secondItem="sUK-L7-jgJ" secondAttribute="centerX" id="Tcq-yB-M5y"/>
                         <constraint firstAttribute="centerY" secondItem="9gy-Om-gXz" secondAttribute="centerY" id="aYd-84-uGU"/>
                         <constraint firstAttribute="centerY" secondItem="9qb-Ir-GBt" secondAttribute="centerY" id="mwh-u2-YMi"/>
+                        <constraint firstAttribute="centerY" secondItem="sUK-L7-jgJ" secondAttribute="centerY" id="wWK-Sh-pTd"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ge-lf-c9S" userLabel="bottomView">
                     <rect key="frame" x="0.0" y="460" width="600" height="140"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvm-xV-xhY" userLabel="indicatorView">
-                            <rect key="frame" x="295" y="10" width="10" height="10"/>
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow_dot" translatesAutoresizingMaskIntoConstraints="NO" id="wMY-op-BrB" userLabel="indicatorDot">
+                            <rect key="frame" x="297" y="13" width="6" height="6"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="Ggh-qh-UtA"/>
-                                <constraint firstAttribute="width" constant="10" id="Snj-3s-J37"/>
+                                <constraint firstAttribute="width" constant="6" id="EB6-6y-NGm"/>
+                                <constraint firstAttribute="height" constant="6" id="VNC-Wt-dOv"/>
                             </constraints>
-                        </view>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZL-th-MHz" userLabel="cancelButton">
-                            <rect key="frame" x="20" y="51" width="68" height="39"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <rect key="frame" x="20" y="66" width="62" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Cancel">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="ELY-Oq-Jqd"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-JS-61V" userLabel="takePhotoButton">
-                            <rect key="frame" x="275" y="51" width="51" height="39"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <state key="normal" title="Snap">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-JS-61V" userLabel="takePhotoButton">
+                            <rect key="frame" x="267" y="51" width="66" height="66"/>
+                            <state key="normal" image="take_photo_btn_normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="5X3-0T-gJZ"/>
                             </connections>
                         </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDB-fg-iPv" userLabel="takeVideoButton">
+                            <rect key="frame" x="267" y="51" width="66" height="66"/>
+                            <state key="normal" image="take_video_btn_normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="takeVideo:" destination="-1" eventType="touchUpInside" id="von-uW-94A"/>
+                            </connections>
+                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-fa-vlk" userLabel="captureModeIndicatorView">
-                            <rect key="frame" x="150" y="30" width="200" height="20"/>
+                            <rect key="frame" x="210" y="20" width="120" height="20"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHP-cm-uIK" userLabel="photoLabel">
-                                    <rect key="frame" x="100" y="0.0" width="100" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PHOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHP-cm-uIK" userLabel="photoLabel">
+                                    <rect key="frame" x="60" y="0.0" width="60" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoT-oc-bby" userLabel="videoLabel">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIDEO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoT-oc-bby" userLabel="videoLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.65739425510000005" green="0.0" blue="0.072366348519999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="FUP-C2-gaI"/>
-                                <constraint firstAttribute="width" constant="200" id="N34-cR-9uw"/>
+                                <constraint firstAttribute="height" constant="20" id="8Z3-UT-QT5"/>
+                                <constraint firstAttribute="width" constant="120" id="YRa-H1-aSe"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="Psw-JS-61V" secondAttribute="centerX" id="8Z1-Nk-o2H"/>
-                        <constraint firstItem="Mvm-xV-xhY" firstAttribute="top" secondItem="6ge-lf-c9S" secondAttribute="top" constant="10" id="BGU-yl-EO8"/>
+                        <constraint firstItem="wMY-op-BrB" firstAttribute="top" secondItem="6ge-lf-c9S" secondAttribute="top" constant="13" id="LT2-xo-Ta7"/>
+                        <constraint firstAttribute="centerX" secondItem="wMY-op-BrB" secondAttribute="centerX" id="UE5-nZ-ZFV"/>
+                        <constraint firstItem="sZL-th-MHz" firstAttribute="centerY" secondItem="Psw-JS-61V" secondAttribute="centerY" id="Y7t-Kf-HPQ"/>
                         <constraint firstItem="sZL-th-MHz" firstAttribute="leading" secondItem="6ge-lf-c9S" secondAttribute="leading" constant="20" id="YpA-UH-bmb"/>
-                        <constraint firstAttribute="centerY" secondItem="sZL-th-MHz" secondAttribute="centerY" id="aJG-Wv-b0s"/>
-                        <constraint firstItem="b6f-fa-vlk" firstAttribute="top" secondItem="Mvm-xV-xhY" secondAttribute="bottom" constant="10" id="akD-LO-5iC"/>
                         <constraint firstAttribute="height" constant="140" id="btf-3L-XhT"/>
-                        <constraint firstAttribute="centerY" secondItem="Psw-JS-61V" secondAttribute="centerY" id="hTt-ZU-1U1"/>
-                        <constraint firstAttribute="centerX" secondItem="b6f-fa-vlk" secondAttribute="centerX" constant="50" id="qfY-Fq-MqW"/>
-                        <constraint firstAttribute="centerX" secondItem="Mvm-xV-xhY" secondAttribute="centerX" id="yZO-ob-aHn"/>
+                        <constraint firstAttribute="centerX" secondItem="hDB-fg-iPv" secondAttribute="centerX" id="c0j-L6-Wkx"/>
+                        <constraint firstAttribute="centerX" secondItem="b6f-fa-vlk" secondAttribute="centerX" constant="30" id="ced-PK-vHY"/>
+                        <constraint firstAttribute="bottom" secondItem="Psw-JS-61V" secondAttribute="bottom" constant="23" id="dno-al-pWI"/>
+                        <constraint firstAttribute="bottom" secondItem="hDB-fg-iPv" secondAttribute="bottom" constant="23" id="ehZ-gY-F1F"/>
+                        <constraint firstItem="b6f-fa-vlk" firstAttribute="top" secondItem="wMY-op-BrB" secondAttribute="bottom" constant="1" id="uRn-I2-dEk"/>
                     </constraints>
                 </view>
             </subviews>
@@ -129,4 +151,11 @@
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="camera_flash_auto_btn" width="30" height="30"/>
+        <image name="camera_switch_btn" width="30" height="30"/>
+        <image name="take_photo_btn_normal" width="66" height="66"/>
+        <image name="take_video_btn_normal" width="66" height="66"/>
+        <image name="yellow_dot" width="6" height="6"/>
+    </resources>
 </document>

@@ -10,9 +10,12 @@
 
 @interface FSCamera : NSObject
 
-@property (nonatomic,assign) id <UINavigationControllerDelegate, UIImagePickerControllerDelegate> delegate;
+@property (nonatomic, assign) id <UINavigationControllerDelegate, UIImagePickerControllerDelegate> delegate;
+@property (nonatomic, assign) UIImagePickerControllerSourceType sourceType;
 
 - (void)showImagePickerForCamera;
 - (void)showImagePickerForPhotoLibrary;
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType animated:(BOOL)flag completion:(void (^)(void))completion;
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion;
 
 @end
